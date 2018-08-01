@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="show_rviz" default="false"/>
+
+  <node pkg="urg_node" type="urg_node" name="urg_node" />
+  
+  <!-- <node pkg="scantovmap" type="pharos" name="ScanToVMap_service" args="scantovmappackage_scan_to_vmap_service" /> -->
+  <node pkg="scantovmap" type="headless" name="ScanToVMap_service" args="scantovmappackage_scan_to_vmap_service" />
+
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find scantovmap)/rviz_cfg/config.rviz" if="$(arg show_rviz)"/>
+</launch>

@@ -99,7 +99,7 @@ if [ ! -f $INSTALLDIR/image/scantovmap.image ]; then
 
 	PRINT "Create $INSTALLDIR/image/scantovmap.image"
 	$PHARO_VM $PHAROS_IMAGE save scantovmap 
-	$PHARO_VM $PHAROS_NODE_IMAGE eval --save "Author useAuthor: 'pharos' during: [ #PhaROSCatkinDeployer asClass setupImageForCurrentCatkinPackage. #ScantovmapPackage asClass  removeFromSystem. (RPackage named: 'ScantovmapPackage') unregister. Metacello new smalltalkhubUser: 'CAR' project: 'VectorMaps'; configuration: 'VectorMapsPhaROS'; version: #bleedingEdge; load: #('ScanToVmap') ]" 
+	$PHARO_VM $PHAROS_NODE_IMAGE eval --save "Author fullName: 'pharos'. #PhaROSCatkinDeployer asClass setupImageForCurrentCatkinPackage. #ScantovmapPackage asClass  removeFromSystem. (RPackage named: 'ScantovmapPackage') unregister. Metacello new smalltalkhubUser: 'CAR' project: 'VectorMaps'; configuration: 'VectorMapsPhaROS'; version: #bleedingEdge; load: #('ScanToVmap')" 
 
 fi
 	
